@@ -20,10 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^7qwrxj1%2o#hii6d3#(2x0sa7i=02$tuk^q#g(7-!on1v^5ou'
+SECRET_KEY = os.environ.get('SECRET_KEY') #Name must match docker-compose env name
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', default=0))
+
 
 ALLOWED_HOSTS = []
 
@@ -156,9 +157,18 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ACCOUNT_SESSION_REMEMBER = True
+
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
 ACCOUNT_USERNAME_REQUIRED = False
+
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
 ACCOUNT_EMAIL_REQUIRED = True
+
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
