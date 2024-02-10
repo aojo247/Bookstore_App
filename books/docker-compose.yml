@@ -7,6 +7,8 @@ services:
     environment:
       - SECRET_KEY=^7qwrxj1%2o#hii6d3#(2x0sa7i=02$tuk^q#g(7-!on1v^5ou
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51OiPEhJ5tG01BbYcbtyL2JbrfUrZ42uOZY58NUrgsAvjSxZ8jlPR4bUSrdWeAExuDBWe3XoFXr5CMGfpFseFDrOz008NLN5mE2
+      - STRIPE_TEST_SECRET_KEY=sk_test_51OiPEhJ5tG01BbYc0JV5Mx8cDpr8ValIBeeDJI1zPokRvGr1iBMWRfGkHVBcHvi9Um9dwR9MDT9NJA4qqgn8qJN6009u24nEzr
     volumes:
     - .:/code
     ports:
