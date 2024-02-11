@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # Admin
-    path('admin/', admin.site.urls),
+    path('any_thing_but_admin/', admin.site.urls),
 
     # User Management (https://github.com/django/django/blob/b9cf764be62e77b4777b3a75ec256f6209a57671/django/contrib
     # /auth/urls.py)
